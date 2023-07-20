@@ -66,7 +66,7 @@ jobs:
           
     - name: Clone source code
       run: |
-        git clone --depth=1 https://github.com/Jisucloud/Padavan-KVR-3.4.git ${{ env.DIR }}
+        git clone --depth=1 https://github.com/Jisucloud/Padavan-3.4.git ${{ env.DIR }}
         cd ${{ env.DIR }}/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
@@ -174,8 +174,8 @@ jobs:
         ##音乐解锁##
         
         ##内网穿透服务##
-        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
-        echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> .config #阿里DDNS
+        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config #zerotier ~1.3M
+        echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config #阿里DDNS
         echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config #内网穿透FRPC
         echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> .config #内网穿透FRPS
         echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=n" >> .config #ddnsto  ~0.5M
